@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reveal Website Elements On Scroll</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pixeden-stroke-7-icon@1.2.3/pe-icon-7-stroke/dist/pe-icon-7-stroke.min.css">
+    <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+    </head>
+  <body>
+
+    <section>
+      <div class="img-slider">
+        <div class="slide active">
+          <img src="New folder/1.jpg" alt="">
+          <div class="info">
+            <h2>Slide 01</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+          </div>
+        </div>
+        <div class="slide">
+          <img src="New folder/2.jpg" alt="">
+          <div class="info">
+            <h2>Slide 02</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+          </div>
+        </div>
+        <div class="slide">
+          <img src="New folder/3.jpg" alt="">
+          <div class="info">
+            <h2>Slide 03</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+          </div>
+        </div>
+        <div class="slide">
+          <img src="New folder/4.jpg" alt="">
+          <div class="info">
+            <h2>Slide 04</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+          </div>
+        </div>
+        <div class="slide">
+          <img src="New folder/5.jpg" alt="">
+          <div class="info">
+            <h2>Slide 05</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+          </div>
+        </div>
+        <div class="navigation">
+          <div class="btn active"></div>
+          <div class="btn"></div>
+          <div class="btn"></div>
+          <div class="btn"></div>
+          <div class="btn"></div>
+        </div>
+      </div>
+    </section>
+    <section> 
+        <img src="New folder/b1.png">
+        <img src="New folder/b2.png"> 
+        <img src="New folder/b3.png"> 
+    </section>
+    <section>
+      <div class="container reveal">
+        <h2>Your Title</h2>
+        <div class="cards">
+          <div class="text-card">
+            <h3>Title</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+          </div>
+          <div class="text-card">
+            <h3>Title</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+          </div>
+          <div class="text-card">
+            <h3>Title</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section>
+      <div class="container reveal">
+        <h2>Your Title</h2>
+        <div class="cards">
+          <div class="text-card">
+            <h3>Title</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+          </div>
+          <div class="text-card">
+            <h3>Title</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+          </div>
+          <div class="text-card">
+            <h3>Title</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section>
+        <div class="container reveal-counter" id = "counter_widget" data-visible = "false">
+           <!--Widget Start-->
+           <div class="card-body color1">
+              <div class="float-left">
+                  <h3>
+                      <span class="currency">$</span>
+                      <span class="count">20000</span>
+                  </h3>
+                  <p>Revenue</p>
+              </div>
+              <div class="float-right">
+                  <i class="pe-7s-cart"></i>
+              </div>
+          </div>
+          <!--Widget End-->
+          <!--Widget Start-->
+          <div class="card-body color2">
+              <div class="float-left">
+                  <h3>
+                      <span class="count">345</span>
+                  </h3>
+                  <p>Clients</p>
+              </div>
+              <div class="float-right">
+                  <i class="pe-7s-users"></i>
+              </div>
+          </div>
+          <!--Widget End-->
+          <!--Widget Start-->
+          <div class="card-body color3">
+              <div class="float-left">
+                  <h3>
+                      <span class="count">4365</span>
+                  </h3>
+                  <p>Templates</p>
+              </div>
+              <div class="float-right">
+                  <i class="pe-7s-browser"></i>
+              </div>
+          </div>
+          <!--Widget End-->
+        </div>
+      
+      </section>
+
+    <script type="text/javascript">
+    var slides = document.querySelectorAll('.slide');
+    var btns = document.querySelectorAll('.btn');
+    let currentSlide = 1;
+
+    // Javascript for image slider manual navigation
+    var manualNav = function(manual){
+      slides.forEach((slide) => {
+        slide.classList.remove('active');
+
+        btns.forEach((btn) => {
+          btn.classList.remove('active');
+        });
+      });
+
+      slides[manual].classList.add('active');
+      btns[manual].classList.add('active');
+    }
+
+    btns.forEach((btn, i) => {
+      btn.addEventListener("click", () => {
+        manualNav(i);
+        currentSlide = i;
+      });
+    });
+
+    // Javascript for image slider autoplay navigation
+    var repeat = function(activeClass){
+      let active = document.getElementsByClassName('active');
+      let i = 1;
+
+      var repeater = () => {
+        setTimeout(function(){
+          [...active].forEach((activeSlide) => {
+            activeSlide.classList.remove('active');
+          });
+
+        slides[i].classList.add('active');
+        btns[i].classList.add('active');
+        i++;
+
+        if(slides.length == i){
+          i = 0;
+        }
+        if(i >= slides.length){
+          return;
+        }
+        repeater();
+      }, 10000);
+      }
+      repeater();
+    }
+    repeat();
+    
+    // For revealing elements on scroll
+    window.addEventListener('scroll', reveal);
+
+    function reveal(){
+      var reveals = document.querySelectorAll('.reveal, .reveal-counter');
+
+      for(var i = 0; i < reveals.length; i++){
+        var windowheight = window.innerHeight;
+        var revealtop = reveals[i].getBoundingClientRect().top;
+        var revealpoint = 150;
+
+        if(revealtop < windowheight - revealpoint){
+          reveals[i].classList.add('active');
+          if(reveals[i].id == "counter_widget")
+          {
+            if(reveals[i].getAttribute("data-visible") == "false")
+            {
+                $('.count').each(function(){
+                $(this).prop('Counter',0).animate({
+                    Counter: $(this).text()
+                }, {
+                    duration:2000,
+                    easing:'swing',
+                    step: function(now){
+                        $(this).text(Math.ceil(now));
+                    }
+                });
+              });
+              reveals[i].setAttribute("data-visible", "true");
+            }
+          }
+        }
+        else{
+          reveals[i].classList.remove('active');
+          if(reveals[i].id == "counter_widget")
+          {
+            reveals[i].setAttribute("data-visible", "false");
+          }
+        }
+      }
+    }
+    </script>
+
+  </body>
+</html>
+
+
+
+
+
+<!-- 
+<script type="text/javascript">
+
+</script>
+-->
